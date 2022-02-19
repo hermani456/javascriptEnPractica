@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>Resultado: <span class="resultado"></span></h2>
+            <div>
+                <div>
+                    <div>
+                        <label for="">Valor 1</label>
+                        <input id="valor1" type="text" />
+                    </div>
+                    <div>
+                        <label for="">Valor 2</label>
+                        <input id="valor2" type="text" />
+                    </div>
+                    <div style="display: flex">
+                        <button id="btn-sumar" type="button">Sumar</button>
+                        <button id="btn-restar" type="button">Restar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const valor1 = document.querySelector("#valor1");
+        const valor2 = document.querySelector("#valor2");
+        const sumar = document.querySelector("#btn-sumar");
+        const restar = document.querySelector("#btn-restar");
+
+        sumar.addEventListener("click", function () {
+            const resultadoSuma = parseInt(valor1.value) + parseInt(valor2.value);
+            document.querySelector(".resultado").innerHTML = resultadoSuma;
+        });
+
+        restar.addEventListener("click", function () {
+            const resultadoResta = parseInt(valor1.value) - parseInt(valor2.value);
+            if (resultadoResta < 0) {
+                document.querySelector(".resultado").innerHTML = 0;
+            } else {
+                document.querySelector(".resultado").innerHTML = resultadoResta;
+            }
+        });
+    </script>
+</body>
+
+</html>
